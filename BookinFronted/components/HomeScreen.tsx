@@ -1,8 +1,18 @@
 import React from "react";
-import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
 
 export default function HomeScreen({ navigation }) {
+  const [fontsLoaded] = useFonts({
+    Playfair: require("../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.topHalf}>
@@ -38,6 +48,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 52,
+    fontFamily: "Playfair",
   },
   topHalf: {
     flex: 1,
@@ -48,9 +59,12 @@ const styles = StyleSheet.create({
   },
   subtext: {
     fontSize: 32,
+    fontFamily: "Playfair",
   },
   buttonContainer: {
     justifyContent: "center",
+    fontFamily: "Playfair",
+
     flex: 1,
   },
 });
