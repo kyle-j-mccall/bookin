@@ -1,19 +1,20 @@
-import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
-export default function App() {
+export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.topHalf}>
         <Text style={styles.titleText}>Bookin'</Text>
-      
+
         <Text style={styles.subtext}>Your virtual bookshelf.</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <Button title="Create Account" color='#31304d' />
-        <Button title="Sign In" color='#31304d'/>
+        <Button title="Create Account" color="#31304d" />
+        <Button title="Sign In" color="#31304d" />
       </View>
-        
+
       <StatusBar style="auto" />
     </View>
   );
@@ -21,31 +22,28 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex:2,
-    paddingVertical: '20%',
-    flexDirection: 'column',
+    flex: 2,
+    paddingVertical: "20%",
+    flexDirection: "column",
     backgroundColor: "#F0ECE5",
     alignItems: "center",
     justifyContent: "space-evenly",
   },
   titleText: {
-    fontSize: 52
+    fontSize: 52,
   },
   topHalf: {
     flex: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: "space-evenly",
     alignItems: "center",
-    
-    paddingTop: '10%',
-    
+
+    paddingTop: "10%",
   },
   subtext: {
-    fontSize:32
+    fontSize: 32,
   },
   buttonContainer: {
-    justifyContent: 'center',
-    flex: 1
+    justifyContent: "center",
+    flex: 1,
   },
-  
-
 });
