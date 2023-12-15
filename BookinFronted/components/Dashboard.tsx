@@ -2,24 +2,17 @@ import React from "react";
 import { Button, ScrollView, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-export default function HomeScreen({ navigation }) {
+export default function Dashboard({ navigation, route }) {
   return (
     <View style={styles.container}>
       <View style={styles.topHalf}>
-        <Text style={styles.titleText}>Bookin'</Text>
+        <Text style={styles.titleText}>Dashboard</Text>
 
-        <Text style={styles.subtext}>Your virtual bookshelf.</Text>
+        <Text style={styles.subtext}>Shelves</Text>
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Create Account" color="#31304d" />
         <Button title="Sign In" color="#31304d" />
-        <Button
-          title="Shelves"
-          color="#31304d"
-          onPress={() => {
-            navigation.navigate("Dashboard");
-          }}
-        />
       </View>
 
       <StatusBar style="auto" />
