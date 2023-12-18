@@ -8,20 +8,19 @@ export default function BookList() {
     <View style={styles.listContainer}>
       <BookPreview />
       <BookPreview />
-      <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   listContainer: {
-    flex: 1,
     flexDirection: "row", // Display items horizontally
-    flexWrap: "wrap", // Allow items to wrap to the next line when needed
+    flexWrap: "wrap",
     paddingHorizontal: 10,
     width: 400,
     backgroundColor: "#31304D",
     alignItems: "center",
+    paddingVertical: 32,
     justifyContent: "center",
   },
 });

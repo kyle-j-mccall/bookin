@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import BookList from "./BookList";
 import { useFonts } from "expo-font";
@@ -11,30 +19,36 @@ export default function Dashboard({ navigation, route }) {
   });
 
   return (
-    <View style={styles.container}>
-      <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Bookin'</Text>
-      </View>
-      <View style={styles.topHalf}>
-        <TextInput
-          placeholder="Search Books"
-          placeholderTextColor={"#F0ECE5"}
-          style={styles.input}
-          onChangeText={(value) => setSearchedBook(value)}
-        />
-      </View>
-      <View style={styles.previewList}>
-        <BookList />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.safe}>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.titleText}>Bookin'</Text>
+          </View>
+          <View style={styles.inputContainer}>
+            <TextInput
+              placeholder="Search Books"
+              placeholderTextColor={"#F0ECE5"}
+              style={styles.input}
+              onChangeText={(value) => setSearchedBook(value)}
+            />
+          </View>
+          <View style={styles.previewList}>
+            <BookList />
+          </View>
+          <StatusBar style="auto" />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safe: {
     flex: 1,
-
+    backgroundColor: "#31304D",
+  },
+  container: {
     flexDirection: "column",
     backgroundColor: "#31304D",
     alignItems: "center",
@@ -43,6 +57,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     flex: 1,
     justifyContent: "center",
+    paddingVertical: 8, // Adjusted padding for better spacing
   },
   titleText: {
     fontSize: 36,
@@ -57,9 +72,10 @@ const styles = StyleSheet.create({
     width: 300,
     color: "#F0ECE5",
   },
-  topHalf: {
+  inputContainer: {
     flex: 1,
     alignItems: "center",
+    paddingVertical: 16,
   },
   previewList: {
     flex: 5,

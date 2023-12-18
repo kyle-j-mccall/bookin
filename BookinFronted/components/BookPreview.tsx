@@ -35,10 +35,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#31304D",
     justifyContent: "center",
     alignItems: "center",
+    width: "50%",
   },
-  imageContainer: {
-    flex: 1,
-  },
+  imageContainer: {},
 
   image: {
     width: 130,
@@ -46,15 +45,16 @@ const styles = StyleSheet.create({
   },
   infoContainer: {
     flex: 1,
+    paddingVertical: 16,
   },
   bookInfo: {
-    fontSize: 16,
+    fontSize: 12,
     color: "#F0ECE5",
     fontFamily: "Playfair",
     textAlign: "center",
   },
   bookTitle: {
-    fontSize: 20,
+    fontSize: 16,
     color: "#F0ECE5",
     fontFamily: "Playfair",
     textAlign: "center",
